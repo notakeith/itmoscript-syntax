@@ -1,7 +1,9 @@
 {
   "name": "itmoscript-syntax",
+  "icon": "images/icon.png",
+  "repository": "https://github.com/notakeith/itmoscript-syntax",
   "displayName": "ITMOScript Support",
-  "publisher": "yourname",
+  "publisher": "notakeith",
   "version": "0.1.0",
   "engines": {
     "vscode": "^1.60.0"
