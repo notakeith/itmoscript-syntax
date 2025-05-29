@@ -1,0 +1,5 @@
+node_modules
+*.vsix
+.history
+out
+.DS_Store
