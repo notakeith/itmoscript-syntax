@@ -5,21 +5,34 @@
   "patterns": [
     { "include": "#comments" },
     { "include": "#strings" },
+    { "include": "#constants" },
     { "include": "#numbers" },
     { "include": "#keywords" },
     { "include": "#operators" },
+    { "include": "#builtins" },
     { "include": "#functions" }
   ],
   "repository": {
     "comments": {
       "patterns": [
-        { "name": "comment.line.double-slash.itmoscript", "match": "//.*$" },
-        { "name": "comment.block.itmoscript", "begin": "/\\*", "end": "\\*/" }
+        { "name": "comment.line.double-slash.itmoscript", "match": "//.*$" }
       ]
     },
     "strings": {
       "patterns": [
-        { "name": "string.quoted.double.itmoscript", "begin": "\"", "end": "\"" }
+        {
+          "name": "string.quoted.double.itmoscript",
+          "begin": "\"",
+          "end": "\"",
+          "patterns": [
+            { "name": "constant.character.escape.itmoscript", "match": "\\\\." }
+          ]
+        }
+      ]
+    },
+    "constants": {
+      "patterns": [
+        { "name": "constant.language.itmoscript", "match": "\\b(true|false|nil)\\b" }
       ]
     },
     "numbers": {
@@ -29,12 +42,27 @@
     },
     "keywords": {
       "patterns": [
-        { "name": "keyword.control.itmoscript", "match": "\\b(if|then|else|end|while|for|in|break|continue|function|return)\\b" }
+        {
+          "name": "keyword.control.itmoscript",
+          "match": "\\b(if|then|else|end|while|for|in|break|continue|return|and|or|not)\\b"
+        },
+        {
+          "name": "keyword.declaration.function.itmoscript",
+          "match": "\\bfunction\\b"
+        }
       ]
     },
     "operators": {
       "patterns": [
-        { "name": "keyword.operator.itmoscript", "match": "\\+|\\-|\\*|\\/|%|\\^|<=|<|>=|>|==|!=|and|or|not" }
+        { "name": "keyword.operator.itmoscript", "match": "\\+\\=|\\-\\=|\\*\\=|\\/\\=|%\\=|\\^\\=|\\+|\\-|\\*|\\/|%|\\^|<=|<|>=|>|==|!=" }
+      ]
+    },
+    "builtins": {
+      "patterns": [
+        {
+          "name": "support.function.builtin.itmoscript",
+          "match": "\\b(print|println|read|len|range|push|pop|insert|remove|sort|split|join|replace|lower|upper|abs|ceil|floor|round|sqrt|rnd|parse_num|to_string|stacktrace)\\b(?=\\s*\\()"
+        }
       ]
     },
     "functions": {

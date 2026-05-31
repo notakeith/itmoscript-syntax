@@ -3,11 +3,13 @@
   "icon": "images/icon.png",
   "repository": "https://github.com/notakeith/itmoscript-syntax",
   "displayName": "ITMOScript Support",
+  "description": "Syntax highlighting, hover docs, completions, and run support for ITMOScript (.is files)",
   "publisher": "notakeith",
   "version": "0.1.0",
   "engines": {
-    "vscode": "^1.60.0"
+    "vscode": "^1.75.0"
   },
+  "keywords": ["itmoscript", "syntax", "language"],
   "categories": [
     "Languages"
   ],
@@ -64,8 +66,8 @@
     "pretest": "npm run compile"
   },
   "devDependencies": {
-    "typescript": "^4.4.3",
-    "vscode": "^1.1.37",
-    "@types/node": "^14.14.37"
+    "typescript": "^5.0.0",
+    "@types/vscode": "^1.75.0",
+    "@types/node": "^18.0.0"
   }
 }

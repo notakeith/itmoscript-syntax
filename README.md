@@ -1,85 +1,50 @@
-# ITMOScript VSCode Extension
+# ITMOScript Support
 
-Расширение добавляет поддержку языка ITMOScript в Visual Studio Code:
+> [Русская версия](README_RU.md)
 
-* **Подсветка синтаксиса** (TextMate Grammar)
-* **Hover** с документацией по ключевым словам и функциям
-* **Completion**: автодополнение ключевых слов и встроенных (builtin) функций
-* **Signature Help**: подсказки параметров для пользовательских и встроенных функций
-* **CodeLens**: отображение количества параметров у пользовательских функций
-* **Outline**: список пользовательских и встроенных функций
-* **Run**: кнопка запуска текущего `.is` файла через внешний интерпретатор
+[![VSCode](https://img.shields.io/badge/VSCode-1.75%2B-007ACC?logo=visualstudiocode&logoColor=white)](https://code.visualstudio.com/)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 
----
+VSCode extension for [ITMOScript](https://github.com/notakeith/itmoscript) — syntax highlighting, hover docs, completions, signature help, outline, and one-click run.
 
-## 🚀 Установка
-Расширение пока доступно в виде [VSIX‑пакета](https://github.com/notakeith/itmoscript-syntax/releases/). Скачайте последний релиз и установите вручную:
+## Features
 
+- **Syntax highlighting** — keywords, constants (`true`, `false`, `nil`), builtins, strings, numbers, comments
+- **Hover docs** — descriptions for keywords and built-in functions on hover
+- **Completions** — keyword suggestions via IntelliSense
+- **Signature help** — parameter hints for built-in and user-defined functions when typing `(` or `,`
+- **Outline** — all user-defined functions listed in the Explorer sidebar
+- **Run** — ▶ button in the editor title bar runs the current `.is` file via your local interpreter
 
-```bash
-# Внутри VSCode
-# Откройте Extensions → «…» → Install from VSIX… → выберите itmoscript-syntax-*.vsix
-```
+## Screenshots
 
-Поддержка в официальном Marketplace появится позже.
+<!-- Add screenshots here -->
 
----
+## Installation
 
-## ⚙️ Конфигурация
+The extension is distributed as a VSIX package. Download the latest release from [Releases](https://github.com/notakeith/itmoscript-syntax/releases/) and install manually:
 
-В настройках пользователя (`settings.json`) задайте путь к вашему исполняемому интерпретатору:
+1. Open VSCode
+2. Go to **Extensions** → **⋯** → **Install from VSIX…**
+3. Select the downloaded `itmoscript-syntax-*.vsix`
+
+## Configuration
+
+Set the path to your ITMOScript interpreter in `settings.json`:
 
 ```jsonc
-"itmoscript.interpreterPath": "/path/to/your/itmoscript_interpreter"
+"itmoscript.interpreterPath": "/path/to/itmoscript"
 ```
 
-Расширение автоматически следит за изменением этой настройки и оповещает, когда путь обновлён.
+The extension watches this setting and notifies you when it changes.
 
----
-
-## 📋 Использование
-
-1. Откройте файл с расширением `.is`
-2. **Кнопка Run** появится в заголовке редактора (▶️).
-3. Нажмите её — в терминале запустится:
-
-   ```bash
-   <интерпретатор> path/to/file.is
-   ```
-
----
-
-## ✨ Особенности
-
-* **Hover**: описания для `if`, `while`, `for`, `function`, `print`, `len` и других.
-* **Completion**: быстрый ввод ключевых слов и всех встроенных функций.
-* **Signature Help**: показывает сигнатуру `func(param1, param2)` при вводе `(` и `,`.
-* **CodeLens**: над объявлением функций выводит `Params: N`.
-* **Outline**: функциям присвоены значки и разделение на пользовательские и builtin.
-
----
-
-## 🛠️ Разработка
+## Build
 
 ```bash
-# Клонировать репозиторий
-git clone https://github.com/yourname/itmoscript-syntax.git
+git clone https://github.com/notakeith/itmoscript-syntax.git
 cd itmoscript-syntax
-
-# Установить зависимости
 npm install
-
-# Запустить Developer Host
-code .
-# Нажать Run & Debug → "Run Extension"
+npm run compile
 ```
 
----
-
-## 🤝 Вклад
-
-Pull requests и идеи приветствуются! Открывайте issues и форкайте репозиторий для улучшений.
-
-## 📄 Лицензия
-
-[MIT © notakeith](LICENSE)
+To launch the extension host: open in VSCode and press **F5**.
