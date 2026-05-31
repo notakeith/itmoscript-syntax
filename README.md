@@ -18,7 +18,7 @@ VSCode extension for [ITMOScript](https://github.com/notakeith/itmoscript) — s
 
 ## Screenshots
 
-<!-- Add screenshots here -->
+![Screenshot](screenshot.png)
 
 ## Installation
 
